@@ -1,10 +1,5 @@
 id: 1
 name: Myrza
 email: asd@asd.com
-password: asdasdasdA
+password: asdasdadA
 city: Astana
-id: 2
-name: Myrza
-email: asd@das.com
-password: asdasdasdasdA
-city: Kipr

@@ -3,3 +3,8 @@ name: Myrza
 email: asd@asd.com
 password: asdasdadA
 city: Astana
+id: 2
+name: Kama
+email: qweqed@dsad.com
+password: qweqdSSAadsd
+city: Weeknd

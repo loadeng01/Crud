@@ -1,3 +1,14 @@
+def get_count():
+    with open('data.txt') as f:
+        strok = f.readlines()
+        count = 0
+        for i in strok:
+            if "\n" in i:
+                count += 1
+
+    return count 
+
+
 def get_all():
     with open('data.txt') as f:
         use = []
@@ -15,7 +26,7 @@ def get_all():
             except ValueError:
                 print("Список пустой")
 
-    if len(use) < 1:
+    if len(use) == 0:
         return "База данных пуста"
     else:
         return use
@@ -24,23 +35,10 @@ def get_all():
 def get_one():
     try:
         users = get_all()
-        num = int(input("Id аккаунта: ")) - 1
-        print(users[num])
+        num = int(input("Id аккаунта: "))
+        print(users[num - 1])
     except IndexError:
         print("Аккаунта с таким ID нету")
-
-        
-
-
-def get_count():
-    with open('data.txt') as f:
-        strok = f.readlines()
-        count = 0
-        for i in strok:
-            if "\n" in i:
-                count += 1
-
-    return count 
 
 
 def get_password() -> str:
@@ -180,8 +178,7 @@ def del_one():
 
 
 def main():
-    print("""Представляем вашему вниманию Систему CRUD
-          Bам доступны следущие фукции:
+    print("""Bам доступны следущие фукции:
           Создать новый аккаунт: 1
           Изменить аккаунт: 2
           Показать все аккаунты: 3
@@ -197,7 +194,7 @@ def main():
         elif choice == 2:
             patch()
         elif choice == 3:
-            get_all()
+            print(get_all())
         elif choice == 4:
             get_one()
         elif choice == 5:
@@ -208,10 +205,3 @@ def main():
             print("Других функций у нас к сожалению нету")
     except ValueError:
         print("Вводите только цифры!")
-
-
-
-
-
-
-
